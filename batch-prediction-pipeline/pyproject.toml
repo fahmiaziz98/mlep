@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "batch-prediction-pipeline"
+version = "0.1.0" 
+description = ""
+authors = ["Fadhil <fahmiazizfadhil09@gmail.com>"]
+readme = "README.md"
+packages = [{include = "batch_prediction_pipeline"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+numpy = "1.25.0"
+fire = "0.5.0"
+google-cloud-storage = "^2.7.0"
+training-pipeline = "0.1.0"
+hopsworks = "3.4.3"
+plotly = "5.9.0"
+hsfs = "^3.4.4"
+pandas = ">=1.3.5"
+sktime = "<=0.20.0"
+scikit-learn = "1.2.2"
+wandb = "0.16.0"
+python-dotenv = ">=0.21.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[[tool.poetry.source]]
+name = "test"  # This name will be used in the configuration to retreive the proper credentials
+url = "http://localhost"  # URL used to download your packages from
