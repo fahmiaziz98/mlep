@@ -159,7 +159,7 @@ def from_best_config(
         artifact = wandb.Artifact(name="best_model", type="model", metadata=metadata)
         artifact.add_file(str(save_model_path))
         run.log_artifact(artifact)
-
+ 
         run.finish()
         artifact.wait()
 
