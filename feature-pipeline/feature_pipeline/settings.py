@@ -39,8 +39,9 @@ def get_root_dir(default_value: str = ".") -> Path:
     return Path(os.getenv("ML_PIPELINE_ROOT_DIR", default_value))
 
 
-ML_PIPELINE_ROOT_DIR = get_root_dir()
-OUTPUT_DIR = ML_PIPELINE_ROOT_DIR / "output"
+ML_PIPELINE_ROOT_DIR = get_root_dir() 
+LOAD_ENV_VARS_DIR = ML_PIPELINE_ROOT_DIR / "mlep"
+OUTPUT_DIR = ML_PIPELINE_ROOT_DIR / "mlep" / "output"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-SETTINGS = load_env_vars(root_dir=ML_PIPELINE_ROOT_DIR)
+SETTING = load_env_vars(root_dir=LOAD_ENV_VARS_DIR)

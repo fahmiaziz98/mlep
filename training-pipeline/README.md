@@ -1,15 +1,19 @@
-# Training Pipeline
-## Usage for Development
-Run the scripts in the following order:
+# Training Pipeline Usage Guide
+### Development Usage
 
-1. Start the hyperparameter tuning script:
+1. **Search Best Config:**
+    - Execute Hyperparameter Tuning using the following command:
+        ```shell
+        python -m training_pipeline.hyperparameter_tuning
+        ```
 
-    `python -m training_pipeline.hyperparameter_tuning`
-
-2. Upload the best config based on the previous hyperparameter tuning step:
-
-    `python -m training_pipeline.best_config`
-
-3. Start the training script using the best configuration uploaded one step before:
-
-    `python -m training_pipeline.train`
+2. **Upload Best Config:**
+    - Upload the best config based on the previous hyperparameter tuning step:
+        ```shell
+        python -m training_pipeline.best_config
+        ```
+1. **Training:**
+    - Execute Training Pipeline using the following command:
+        ```shell
+        python -m training_pipeline.train
+        ```

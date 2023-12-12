@@ -1,11 +1,16 @@
-# Feature Pipeline
-extract, transform and load data from api to feature store
+# Feature Pipeline Usage Guide
 
-## Usage for Development
-1. To start the ETL pipeline run:
+### Development Usage
 
-    `python -m feature_pipeline.pipeline`
+1. **ETL Pipeline:**
+    - Execute ETL using the following command:
+        ```shell
+        python -m feature_pipeline.pipeline
+        ```
 
-2. To create a new feature view run:
-
-    `python -m feature_pipeline.feature_view`
+2. **Feature View:**
+    - Create Feature View for Training Pipeline, by running:
+        ```shell
+        python -m feature_pipeline.feature_view
+        ```
+    
