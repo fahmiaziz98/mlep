@@ -47,29 +47,17 @@ In this project, the ETL steps performed include:
 
 In this stage, I will create a model using sktime and LightGBM for forecasting the next 24 hours. I will use W&B (Weights & Biases) to track experiments, model registry, track artifacts, and perform hyperparameter tuning to obtain the best model. Based on the best configuration found during the hyperparameter tuning step, I will train the final model on the entire dataset and save it to the Hopsworks model registry for further use in the batch prediction pipeline. The following are the steps:
 
-1. Sign up/Login to the wandb account:
-    - Create a new API key.
-    - Create a new project named "mlep_consumption_energy".
-2. Load data from the feature store:
+1. Load data from the feature store:
     - Access the feature store.
     - Retrieve references to the feature view and dataset versions.
     - Record all metadata related to dataset splitting, along with some basic statistics for each split, such as size and feature distribution.
-3. Model Creation:
+2. Model Creation:
     - Create a Baseline model.
     - Create a model using sktime and LightGBM.
     - Build a pipeline.
-4. Hyperparameter Optimization:
-    - Load the dataset from the feature store based on the data and feature view versions, and store metadata from the run, including the sweep_id from the hyperparameter search.
-    - Retrieve the training data, create a new sweep, and start the W&B agent. In a single sweep run, we build and train the model using cross-validation.
-    - Use the Mean Absolute Percentage Error (MAPE) metric for evaluation.
-5. Select the best configuration with the lowest MAPE and upload the best configuration as an artifact. This will be used later to train the model on the entire dataset with the best configuration.
-6. Train the Model using the Best Configuration:
-    - Load the best_config artifact.
-    - Build the baseline model, train, and evaluate it on the test split.
-    - Build, train, and evaluate the advanced model using the latest best configuration.
-    - Retrain the model on the entire dataset. This is crucial for time series models as they need to be trained on the most up-to-date data to predict the future.
-    - Display the prediction results.
-    - Save the best model in the Hopsworks model registry.
+3. Hyperparameter Optimization
+4. Select the best configuration 
+5. Train the Model using the Best Configuration and save the best model in the Hopsworks model registry.
 
 Tabel metrics with best model & experiments
 | Model           |      MAPE       |      RMSPE     |
@@ -88,22 +76,6 @@ In the batch pipeline there are several steps, namely:
 - Make predictions
 - Saving the prediction in the Google Cloud Store Bucket
 
-Now, all you have to do is to go to your project at the same level as your Poetry files (the ones mentioned above — for example, go to your batch-prediction-pipeline directory) and run:
-```
->>>poetry build
-```
-This will create a dist folder containing your package as a wheel. Now you can directly install your package using the wheel file or deploy it to a PyPi server.
-To deploy it, configure your PyPi server credentials with the following:
-```
->>>poetry config repositories.<my-pypi-server> <pypi server URL>
->>>poetry config http-basic.<my-pypi-server> <username> <password>
-```
-Finally, deploy it using the following:
-```
->>>poetry publish -r <my-pypi-server>
-```
-
-## Orchestrate Everything with Airflow<a name="orchestrate"></a>
 
 
 
