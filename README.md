@@ -13,8 +13,7 @@ In this project, I will develop an ML model that can predict energy consumption 
 5. [Model Development and Training](#model_training)
 6. [Batch Prediction Pipeline](#batch-prediction)
 7. [Monitoring and Maintenance](#monitor)
-8. Conclusion
-9. References
+8. [References](#refrence)
 
 ## Problem Statement<a name="problem-statement"></a>
 Energy consumption levels are vital information in energy resource planning and management. However, accurate predictions of future energy consumption levels are crucial for optimizing energy production and distribution. Therefore, the main objective of this project is to build a model capable of predicting energy consumption levels for the next 24 hours with high accuracy. The model will consider various factors such as time, Industry Code DE36, and Industry Code DE19.
@@ -82,14 +81,15 @@ build a FastAPI backend that will consume predictions and monitoring metrics fro
 - dashboard showing monitoring metrics 
 
 Both frontend applications will request data from the FastAPI RESTful API via HTTP and use Streamlit to render the data into multiple plots.
+
 ![Forecast](output/img/fe.png)
 
 
+## Refrence<a name="refrence">
+- [Data](https://www.energidataservice.dk/tso-electricity/ConsumptionDK3619codehour)
+- [Article](https://towardsdatascience.com/a-guide-to-building-effective-training-pipelines-for-maximum-results-6fdaef594cee)
+- [Validation](https://www.hopsworks.ai/post/data-validation-for-enterprise-ai-using-great-expectations-with-hopsworks)
+- [GCP Bucket](https://cloud.google.com/storage/docs/creating-buckets)
+- [Model Serving](https://medium.com/faun/key-concepts-for-model-serving-38ccbb2de372)
+- [FastAPI-Path-Params](https://fastapi.tiangolo.com/tutorial/path-params/)
 
-#### Sumber 
-- sumber https://archive.ph/w2qg6
-
-
-## Refrensi
-- article https://archive.ph/bJfoy
-- notion https://www.notion.so/ae0ea847f0444ae3b2da581ae451846d?v=119b1287fd994107b25f841b4c29ee56&p=2cd3e0a393304f34b32bdb084590856e&pm=s
