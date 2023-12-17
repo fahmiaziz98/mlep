@@ -11,7 +11,7 @@ In this project, I will develop an ML model that can predict energy consumption 
 3. [Data Source](#data-source)
 4. [Data Extraction, Transformation, and Loading (ETL)](#etl-pipeline)
 5. [Model Development and Training](#model_training)
-6. [Batch Training](#batch-training)
+6. [Batch Prediction Pipeline](#batch-prediction)
 7. Monitoring and Maintenance
 8. Conclusion
 9. References
@@ -67,9 +67,9 @@ Tabel metrics with best model & experiments
 
 
 here example forecast:
-![Forecasting](image_forecast/image_forecast.png)
+![Forecasting](output/image_forecast/image_forecast.png)
 
-## Batch Training<a name="batch-training"></a>
+## Batch Prediction Pipeline<a name="batch-prediction"></a>
 In the batch pipeline there are several steps, namely:
 - Load data from the feature store in batch mode
 - Load the model from the model registry
