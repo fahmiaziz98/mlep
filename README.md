@@ -12,7 +12,7 @@ In this project, I will develop an ML model that can predict energy consumption 
 4. [Data Extraction, Transformation, and Loading (ETL)](#etl-pipeline)
 5. [Model Development and Training](#model_training)
 6. [Batch Prediction Pipeline](#batch-prediction)
-7. Monitoring and Maintenance
+7. [Monitoring and Maintenance](#monitor)
 8. Conclusion
 9. References
 
@@ -67,15 +67,22 @@ Tabel metrics with best model & experiments
 
 
 here example forecast:
-![Forecasting](output/image_forecast/image_forecast.png)
+![Forecasting](output/images_forecast/image_forecast.png)
 
 ## Batch Prediction Pipeline<a name="batch-prediction"></a>
 In the batch pipeline there are several steps, namely:
 - Load data from the feature store in batch mode
 - Load the model from the model registry
-- Make predictions
+- Make predictions and monitoring
 - Saving the prediction in the Google Cloud Store Bucket
 
+## Monitoring and Maintenance<a name="monitor"></a>
+build a FastAPI backend that will consume predictions and monitoring metrics from GCS and expose them via a RESTful API. More concretely, through a set of endpoints that will expose the data over HTTP(S).
+- dashboards showing forecasts 
+- dashboard showing monitoring metrics 
+
+Both frontend applications will request data from the FastAPI RESTful API via HTTP and use Streamlit to render the data into multiple plots.
+![Forecast](output/img/fe.png)
 
 
 
