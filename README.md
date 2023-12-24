@@ -1,9 +1,7 @@
 # Batch Architecture for Energy Consumption Forecasting
 ## Introduction
 
-In this project, I will develop an ML model that can predict energy consumption levels based on data obtained from the [Energidataservice](https://www.energidataservice.dk/). The goal is to build a reliable and production-ready model that can accurately predict energy consumption levels for the next 24 hours across various consumer types in Denmark. By leveraging machine learning and best practices in MLOps, I aim to provide valuable insights for energy planning, resource optimization, and decision-making in the energy sector. Let's embark on this exciting journey of building an ML model ready for energy consumption prediction in Denmark!
-
-**Note:** This project is open to anyone who wants to contribute, such as adding features, fixing bugs, updating code, and so on.
+In this project, I will develop an ML model that can predict energy consumption levels based on data obtained from the [Energidataservice](https://www.energidataservice.dk/). The goal is to build a reliable and production-ready model that can accurately predict energy consumption levels for the next 24 hours across various consumer types in Denmark. By leveraging machine learning and best practices in MLOps, I aim to provide valuable insights for energy planning, resource optimization, and decision-making in the energy sector. 
  
 #### Table of Contents
 1. [Problem Statement](#problem-statement)
@@ -22,7 +20,7 @@ Energy consumption levels are vital information in energy resource planning and 
 The main objective of this project is to design, implement, deploy, and monitor a batch ML system that can predict energy consumption levels for the next 24 hours. By following best practices in MLOps, the aim is to create a production-ready model that is not only accurate but also scalable and easy to maintain. Throughout this project, the focus will be on building a reliable feature engineering pipeline, implementing efficient data processing techniques, and integrating necessary tools such as experiment tracking, model registry, feature store, and more. Below is a picture of the architecture.
 
 
-<img src="output/flowchart.png" alt="architecture MLOps" width="700" height="500">
+<img src="output/flowchart.png" alt="architecture MLOps">
 
 
 ## Data Source<a name="data-source"></a>
